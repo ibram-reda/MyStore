@@ -11,7 +11,8 @@ to run it in your local machine just clone the application run `npm start` at th
 **Note** if your browser block the http request try the Incognito mode or try different browser
 
 
-
+## Features
+1. User Can easly switch between Dark/light Mode
 
 
 
