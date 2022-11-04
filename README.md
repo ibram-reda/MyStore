@@ -12,7 +12,12 @@ to run it in your local machine just clone the application run `npm start` at th
 
 
 ## Features
-1. User Can easly switch between Dark/light Mode
+1. [x] Product list
+2. [x] Product details
+3. [ ] Shopping cart
+4. [ ] Chechout form
+5. [ ] Order confirmation Page
+6. [x] User Can easly switch between Dark/light Mode
 
 
 

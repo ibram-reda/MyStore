@@ -1,0 +1,8 @@
+<h2>
+  Products
+</h2>
+
+  <div fxLayout="row wrap" fxLayoutGap="32px grid" fxLayoutAlign="center" >
+    <app-product-item *ngFor="let product of Products" [product]="product" ></app-product-item>
+  </div>
+

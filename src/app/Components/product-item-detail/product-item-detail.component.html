@@ -1,0 +1,29 @@
+<mat-spinner *ngIf="!isPageIntialized"></mat-spinner>
+<div *ngIf="isPageIntialized" fxLayout="row" fxFlexAlign="center" fxLayoutGap="40px" style="max-width: 1100px;Margin:auto;">
+  <div  fxFlex >
+    <img [src]="product?.url" class="image" [alt]="product?.name+ 'poto'">
+  </div>
+  <div fxFlex fxlayout="column" fxFlexAlign="center">
+      <h2>{{product?.name}}</h2>
+      <h4>{{product?.price | currency}}</h4>
+      <p>{{product?.description}}</p>
+
+      <mat-form-field appearance="outline">
+        <mat-label>HowMany</mat-label>
+        <mat-select >
+          <mat-option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]" [value]="i">{{i}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary">Add to Cart</button>
+      <br>
+
+
+      <button mat-icon-button routerLink="/" color="primary">
+        <mat-icon>keyboard_backspace</mat-icon>
+        <small> Back to Product List</small>
+      </button>
+  </div>
+
+</div>
+

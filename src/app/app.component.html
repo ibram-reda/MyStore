@@ -3,6 +3,8 @@
 
   <mat-sidenav-content>
     <app-navbar [isDarkModeActive]="isDarkModeActive" (DarkModeChanged)="onDarkModeChanged($event)"></app-navbar>
-    <router-outlet></router-outlet>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
