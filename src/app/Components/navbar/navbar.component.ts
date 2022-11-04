@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './../../Services/shopping-cart.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
@@ -9,10 +10,10 @@ export class NavbarComponent {
 
   @Input() isDarkModeActive:boolean = true;
   @Output("DarkModeChanged") NotifyDarkModeChanged  = new EventEmitter<boolean>();
-  constructor() { }
+  constructor(public shoppingCart:ShoppingCartService) {}
 
   OnDarkModeChanged(){
-    
+
     this.isDarkModeActive = ! this.isDarkModeActive;
     this.NotifyDarkModeChanged.emit(this.isDarkModeActive);
 

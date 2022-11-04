@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './../../Services/shopping-cart.service';
 import { ProductService } from './../../Services/product.service';
 import { Product } from './../../Models/product';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,8 @@ export class ProductItemDetailComponent implements OnInit {
 
   isPageIntialized = false;
   product : Product|null = null;
-  constructor(private productService:ProductService, private route:ActivatedRoute) { }
+  Count=1;
+  constructor(private productService:ProductService, private route:ActivatedRoute,private shoppingCart:ShoppingCartService) { }
 
   ngOnInit(): void {
     const id:number = this.route.snapshot.params['id'];
@@ -20,4 +22,11 @@ export class ProductItemDetailComponent implements OnInit {
     this.isPageIntialized= true;
   }
 
+  AddToCart(){
+    if(!this.product){
+      // TODO: Notfiy User somsing went wrong
+      return;
+    }
+    this.shoppingCart.addCartItem({product:this.product,Count:this.Count})
+  }
 }

@@ -1,0 +1,12 @@
+<div fxLayout="row">
+  <div fxFlex fxLayout="column">
+    <h3>Total : {{Total|currency}}</h3>
+    <app-cart-product *ngFor="let item of cartItems" [Item]="item" ></app-cart-product>
+
+  </div>
+
+  <div fxFlex>
+
+  </div>
+
+</div>

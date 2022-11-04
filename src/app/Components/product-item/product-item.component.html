@@ -11,6 +11,6 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-button [routerLink]="['Product',product.id]">More details</button>
-    <button mat-button>Add to cart</button>
+    <button mat-button (click)="AddToCart()">Add to cart</button>
   </mat-card-actions>
 </mat-card>
