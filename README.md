@@ -29,4 +29,4 @@ to run it in your local machine just clone the application run `npm start` at th
 
 [1]: https://material.angular.io/
 [2]: https://github.com/angular/flex-layout
-[3]: https://ibram-reda.github.io/my-store/
+[3]: https://ibram-reda.github.io/MyStore/
