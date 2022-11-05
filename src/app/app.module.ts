@@ -10,17 +10,17 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 // mateial components
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule}         from '@angular/material/toolbar';
+import {MatIconModule}            from '@angular/material/icon';
+import {MatButtonModule}          from '@angular/material/button';
+import {MatSidenavModule}         from '@angular/material/sidenav';
+import {MatTooltipModule}         from '@angular/material/tooltip';
+import {MatCardModule}            from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule}       from '@angular/material/form-field';
+import {MatSelectModule}          from '@angular/material/select';
+import {MatBadgeModule}           from '@angular/material/badge';
+import {MatInputModule}           from '@angular/material/input';
 // Components
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
@@ -28,6 +28,7 @@ import { ProductItemDetailComponent } from './Components/product-item-detail/pro
 import { ProductItemComponent } from './Components/product-item/product-item.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { CartProductComponent } from './Components/cart/cart-product/cart-product.component';
+import { OrderConfirmationComponent } from './Components/cart/order-confirmation/order-confirmation.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { CartProductComponent } from './Components/cart/cart-product/cart-produc
     ProductItemComponent,
     CartComponent,
     CartProductComponent,
+    OrderConfirmationComponent,
   ],
   imports: [
     BrowserModule,

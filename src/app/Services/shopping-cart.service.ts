@@ -37,6 +37,13 @@ export class ShoppingCartService {
     }
     this.cartItems.push(item);
   }
+ /**
+  * Delete all items in the cart
+  */
+  Clear(){
+    while(this.CartItems.length)
+      this.CartItems.pop();
+  }
 
   get CartItems():CartItem[]{
     return this.cartItems;

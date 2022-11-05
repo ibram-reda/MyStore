@@ -6,11 +6,11 @@
   </mat-card-title-group>
   <mat-card-content>
     {{item.product.description}}
-  </mat-card-content>
-  <mat-card-footer>
-    <mat-form-field appearance="outline">
+
+    <br>
+    <mat-form-field appearance="outline" style="max-width:100px;">
       <mat-label>Amount</mat-label>
       <input matInput type="number" [(ngModel)]="item.Count">
     </mat-form-field>
-  </mat-card-footer>
+  </mat-card-content>
 </mat-card>
