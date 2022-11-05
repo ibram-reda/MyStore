@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { Product } from './../Models/product';
 import { HttpClient } from '@angular/common/http';
 import { TaggedTemplateExpr } from '@angular/compiler';
@@ -9,7 +10,7 @@ import { map,filter, Observable,of, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  readonly BaseUrl = "/assets/data.json"
+  readonly BaseUrl = `${environment.BaseUrl}/assets/data.json`;
   products:Observable<Product[]>|null = null;
   constructor(private http:HttpClient) { }
 
