@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  BaseUrl:'MyStore'
+  BaseUrl:'https://ibram-reda.github.io/MyStore'
 };
