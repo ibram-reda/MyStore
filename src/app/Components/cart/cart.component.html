@@ -1,0 +1,58 @@
+<div fxLayout="row" fxLayoutAlign="space-around start" style="margin-top: 30px;" *ngIf="!confirmed">
+
+  <!--left hand view cart-item view-->
+  <div fxFlex="450px" fxLayout="column">
+    <app-cart-product *ngFor="let item of cartItems" [Item]="item"></app-cart-product>
+    <h2>Total : {{Total|currency}}</h2>
+  </div>
+
+  <!--right hand view Form-->
+  <div fxFlex="450px">
+    <form fxLayout="column" #formData="ngForm" (ngSubmit)="OnSubmit(formData);">
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Full name</mat-label>
+        <input type="text" matInput required minlength="5" name="fullName" #fullName="ngModel" [(ngModel)]="userInfo.fullName" placeholder="Ex. Ibram reda">
+
+          <mat-error *ngIf="fullName.errors?.['required']">
+            Please input your full name.
+          </mat-error>
+          <mat-error *ngIf="fullName.errors?.['minlength']">
+            The fullName must contain at least 5 characters.
+          </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Address</mat-label>
+        <input type="text" matInput required minlength="5" name="address" #address="ngModel" [(ngModel)]="userInfo.address" placeholder="Ex. cairo,Egypt">
+        <mat-error *ngIf="address.errors?.['required']">
+          your address is required
+        </mat-error>
+        <mat-error *ngIf="address.errors?.['minlength']">
+          The addre must contain at least 5 characters.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Credit Card number </mat-label>
+        <input type="text" matInput required pattern="[0-9]{16}" name="creditCard" #creditCard="ngModel" [(ngModel)]="userInfo.creditCardNumber" placeholder="Ex. xxxx xxxx xxxx xxxx">
+        <mat-error *ngIf="creditCard.errors?.['required']">
+          your credit Card is required
+        </mat-error>
+        <mat-error *ngIf="creditCard.errors?.['pattern']">
+          it should be 16 digit without spaces
+        </mat-error>
+      </mat-form-field>
+
+
+      <button mat-raised-button type="submit" color="primary">Submint</button>
+    </form>
+  </div>
+
+</div>
+
+
+
+<div *ngIf="confirmed">
+  <app-order-confirmation [userInfo]="userInfo" [Total]="FinalTotalValue"></app-order-confirmation>
+</div>

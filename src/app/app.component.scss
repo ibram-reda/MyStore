@@ -1,0 +1,12 @@
+.sidenav-container {
+  height: 100%;
+}
+
+app-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.content{
+  margin:0 20px ;
+}
