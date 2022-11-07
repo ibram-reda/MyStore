@@ -1,13 +1,13 @@
 import { Product } from './../../../Models/product';
 import { CartItem } from './../../../Models/cart-item';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cart-product',
   templateUrl: './cart-product.component.html',
   styleUrls: ['./cart-product.component.scss']
 })
-export class CartProductComponent implements OnInit {
+export class CartProductComponent {
 
   @Input("Item") item : CartItem = {
     product:{
@@ -19,11 +19,13 @@ export class CartProductComponent implements OnInit {
     },
     Count:0
   }
+  @Output() Delete = new EventEmitter<number>();
 
 
   constructor() { }
 
-  ngOnInit(): void {
+  removeItem(){
+    this.Delete.emit(this.item.product.id);
   }
 
 }

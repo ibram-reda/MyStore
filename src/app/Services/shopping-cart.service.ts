@@ -2,6 +2,7 @@ import { CartItem } from './../Models/cart-item';
 import { Product } from './../Models/product';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Expansion } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,8 @@ export class ShoppingCartService {
   }
 
   addCartItem(item:CartItem){
+    if(item.Count<0)
+      throw new Error('item count can not be negitve');
     // notify user to add item
     const msg = `a ${item.Count} item${item.Count>1?'s':''} of ${item.product.name} will add to ur cart`;
     this._snackBar.open(msg,'Cool',{duration:10000,verticalPosition:'top'});
@@ -27,6 +30,12 @@ export class ShoppingCartService {
       return;
     }
     this.cartItems.push(item);
+  }
+
+  remove(ItemId:number){
+    const ProductIndex = this.cartItems.findIndex(i=>i.product.id == ItemId);
+    if(ProductIndex<0) return;
+    this.CartItems.splice(ProductIndex,1);
   }
  /**
   * Delete all items in the cart

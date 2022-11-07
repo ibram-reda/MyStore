@@ -2,7 +2,7 @@
 
   <!--left hand view cart-item view-->
   <div fxFlex="450px" fxLayout="column">
-    <app-cart-product *ngFor="let item of cartItems" [Item]="item"></app-cart-product>
+    <app-cart-product *ngFor="let item of cartItems" [Item]="item" (Delete)="OnDelete($event)"></app-cart-product>
     <h2>Total : {{Total|currency}}</h2>
   </div>
 

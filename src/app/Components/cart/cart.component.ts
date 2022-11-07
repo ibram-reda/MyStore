@@ -43,4 +43,8 @@ export class CartComponent implements OnInit {
     this.confirmed = true;
     this.shoppingCart.Clear();
   }
+
+  OnDelete(ItemId:number){
+    this.shoppingCart.remove(ItemId);
+  }
 }
