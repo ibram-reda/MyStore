@@ -1,6 +1,7 @@
 import { CartItem } from './../Models/cart-item';
 import { Product } from './../Models/product';
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -8,18 +9,18 @@ import { Injectable } from '@angular/core';
 export class ShoppingCartService {
   cartItems:CartItem[] = [];
 
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar) { }
 
   addProduct(product:Product){
-    const existProduct = this.cartItems.find(i=>i.product.id == product.id);
-    if(existProduct){
-      existProduct.Count++;
-      return;
-    }
-    this.cartItems.push({product:product,Count:1});
+    let item: CartItem ={product:product, Count:1};
+    this.addCartItem(item);
   }
 
   addCartItem(item:CartItem){
+    // notify user to add item
+    const msg = `a ${item.Count} item${item.Count>1?'s':''} of ${item.product.name} will add to ur cart`;
+    this._snackBar.open(msg,'Cool',{duration:10000,verticalPosition:'top'});
+    // Add item to the cart
     const existProduct = this.cartItems.find(i=>i.product.id == item.product.id);
     if(existProduct){
       existProduct.Count += item.Count;

@@ -21,6 +21,8 @@ import {MatFormFieldModule}       from '@angular/material/form-field';
 import {MatSelectModule}          from '@angular/material/select';
 import {MatBadgeModule}           from '@angular/material/badge';
 import {MatInputModule}           from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 // Components
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
@@ -61,7 +63,8 @@ import { OrderConfirmationComponent } from './Components/cart/order-confirmation
     MatFormFieldModule,
     MatSelectModule,
     MatBadgeModule,
-    MatInputModule
+    MatInputModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
