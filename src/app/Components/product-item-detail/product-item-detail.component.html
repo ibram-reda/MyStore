@@ -1,6 +1,11 @@
 <mat-spinner *ngIf="!isPageIntialized"></mat-spinner>
-<div *ngIf="isPageIntialized" fxLayout="row" fxFlexAlign="center" fxLayoutGap="40px" style="max-width: 1100px;Margin:auto;">
-  <div  fxFlex >
+<div *ngIf="isPageIntialized" 
+      fxLayout="row" 
+      fxLayout.lt-sm="column"
+      fxFlexAlign="center"
+      fxLayoutGap="20px"
+      style="max-width: 1100px;Margin:auto;">
+  <div>
     <img [src]="product?.url" class="image" [alt]="product?.name+ 'poto'">
   </div>
   <div fxFlex fxlayout="column" fxFlexAlign="center">

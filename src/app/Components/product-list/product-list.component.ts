@@ -9,12 +9,15 @@ import { Product } from 'src/app/Models/product';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
-
   Products : Product[] = [];
+  isPageIntialized = false;
   constructor(private prodectService:ProductService) { }
 
   ngOnInit(): void {
-    this.prodectService.getProductList().subscribe(res=>this.Products = res);
+    this.prodectService.getProductList().subscribe(res=>{
+      this.Products = res;
+      this.isPageIntialized = true;
+    });
   }
 
 }

@@ -1,13 +1,28 @@
-<div fxLayout="row" fxLayoutAlign="space-around start" style="margin-top: 30px;" *ngIf="!confirmed">
+
+<div fxLayout="column" fxLayoutAlign="center center" *ngIf="cartItems.length===0">
+  <p>your Cart is empty</p>
+  <button mat-button routerLink="/" color="primary">
+    <mat-icon>keyboard_backspace</mat-icon>
+    <small> Back to Product List</small>
+  </button>
+</div>
+
+<div fxLayout="row" 
+     fxLayoutAlign="space-around start" 
+     fxLayout.lt-sm="column-reverse"
+     fxLayoutAlign.lt-sm="start center" 
+     fxLayoutGap="20px" 
+     style="margin-top: 30px;" 
+     *ngIf="cartItems.length>0 && !confirmed">
 
   <!--left hand view cart-item view-->
-  <div fxFlex="450px" fxLayout="column">
+  <div fxLayout="column">
     <app-cart-product *ngFor="let item of cartItems" [Item]="item" (Delete)="OnDelete($event)"></app-cart-product>
     <h2>Total : {{Total|currency}}</h2>
   </div>
 
   <!--right hand view Form-->
-  <div fxFlex="450px">
+  <div >
     <form fxLayout="column" #formData="ngForm" (ngSubmit)="OnSubmit(formData);">
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Full name</mat-label>
