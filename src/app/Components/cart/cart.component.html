@@ -26,7 +26,7 @@
     <form fxLayout="column" #formData="ngForm" (ngSubmit)="OnSubmit(formData);">
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Full name</mat-label>
-        <input type="text" matInput required minlength="5" name="fullName" #fullName="ngModel" [(ngModel)]="userInfo.fullName" placeholder="Ex. Ibram reda">
+        <input type="text" matInput required minlength="5" name="fullName" #fullName="ngModel" [(ngModel)]="userInfo.fullName" (ngModelChange)="OnModelChange(fullName);" placeholder="Ex. Ibram reda">
 
           <mat-error *ngIf="fullName.errors?.['required']">
             Please input your full name.
@@ -39,7 +39,7 @@
 
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Address</mat-label>
-        <input type="text" matInput required minlength="5" name="address" #address="ngModel" [(ngModel)]="userInfo.address" placeholder="Ex. cairo,Egypt">
+        <input type="text" matInput required minlength="5" name="address" #address="ngModel" [(ngModel)]="userInfo.address" (ngModelChange)="OnModelChange(address);" placeholder="Ex. cairo,Egypt">
         <mat-error *ngIf="address.errors?.['required']">
           your address is required
         </mat-error>
@@ -50,7 +50,7 @@
 
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Credit Card number </mat-label>
-        <input type="text" matInput required pattern="[0-9]{16}" name="creditCard" #creditCard="ngModel" [(ngModel)]="userInfo.creditCardNumber" placeholder="Ex. xxxx xxxx xxxx xxxx">
+        <input type="text" matInput required pattern="[0-9]{16}" name="creditCard" #creditCard="ngModel" [(ngModel)]="userInfo.creditCardNumber" (ngModelChange)="OnModelChange(creditCard);" placeholder="Ex. xxxx xxxx xxxx xxxx">
         <mat-error *ngIf="creditCard.errors?.['required']">
           your credit Card is required
         </mat-error>
@@ -59,6 +59,10 @@
         </mat-error>
       </mat-form-field>
 
+      
+      <ul style="color: red;">
+        <li *ngFor="let control of ControlesWithErrors">{{control}}</li>
+      </ul>
 
       <button mat-raised-button type="submit" color="primary">Submint</button>
     </form>
