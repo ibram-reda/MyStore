@@ -22,7 +22,7 @@ export class ShoppingCartService {
       throw new Error('item count can not be negitve');
     // notify user to add item
     const msg = `a ${item.Count} item${item.Count>1?'s':''} of ${item.product.name} will add to ur cart`;
-    this._snackBar.open(msg,'Cool',{duration:10000,verticalPosition:'top'});
+    this._snackBar.open(msg,'Cool',{duration:2000,verticalPosition:'top'});
     // Add item to the cart
     const existProduct = this.cartItems.find(i=>i.product.id == item.product.id);
     if(existProduct){
@@ -35,6 +35,10 @@ export class ShoppingCartService {
   remove(ItemId:number){
     const ProductIndex = this.cartItems.findIndex(i=>i.product.id == ItemId);
     if(ProductIndex<0) return;
+    // notify user to add item
+    const ProductObj:CartItem|undefined = this.cartItems.find(i=>i.product.id == ItemId);
+    const msg = `${ProductObj?.product.name} removed from ur cart`;
+    this._snackBar.open(msg,'Cool',{duration:2000,verticalPosition:'top'});
     this.CartItems.splice(ProductIndex,1);
   }
  /**
