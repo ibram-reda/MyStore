@@ -1,3 +1,4 @@
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { ProductItemDetailComponent } from './Components/product-item-detail/product-item-detail.component';
 import { ProductListComponent } from './Components/product-list/product-list.component';
@@ -7,7 +8,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {path:'',component:ProductListComponent},
   {path:'Cart',component:CartComponent},
-  {path:'Product/:id',component:ProductItemDetailComponent}
+  {path:'Product/:id',component:ProductItemDetailComponent},
+  {path: '**', component:PageNotFoundComponent}
 ];
 
 @NgModule({

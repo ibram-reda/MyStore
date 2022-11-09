@@ -31,6 +31,7 @@ import { ProductItemComponent } from './Components/product-item/product-item.com
 import { CartComponent } from './Components/cart/cart.component';
 import { CartProductComponent } from './Components/cart/cart-product/cart-product.component';
 import { OrderConfirmationComponent } from './Components/cart/order-confirmation/order-confirmation.component';
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { OrderConfirmationComponent } from './Components/cart/order-confirmation
     CartComponent,
     CartProductComponent,
     OrderConfirmationComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

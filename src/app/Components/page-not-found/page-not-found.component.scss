@@ -1,0 +1,30 @@
+
+.mainbox {
+  margin: 30px auto;
+  height: 600px;
+  max-width: 600px;
+  position: relative;
+}
+
+.err0,.err1,.err2{
+  font-size: 11rem;
+  position:absolute;
+  top: 8%;
+}
+.err0 {left: 20%;}
+.err1 {left: 40%;}
+.err2 {left: 60%;}
+
+.msg {
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    position:absolute;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+    button{
+      font-size: 1.6rem;
+    }
+  }
+
